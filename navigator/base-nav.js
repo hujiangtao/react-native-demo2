@@ -10,7 +10,13 @@ class HomeScreen extends React.Component {
         <Text>首页</Text>
         <Button
           title="跳转到详情页面"
-          onPress={() => this.props.navigation.navigate('Detail')}
+          onPress={() =>
+            this.props.navigation.navigate('Detail', {
+              newsId: 'lk001',
+              newsName: '第一号文件',
+              newsTag: '重要',
+            })
+          }
         />
       </View>
     );
@@ -19,9 +25,21 @@ class HomeScreen extends React.Component {
 
 class DetailScreen extends React.Component {
   render() {
+    const {navigation} = this.props;
+
     return (
       <View style={styles.detailStyle}>
         <Text>详情页面</Text>
+        <Text>Id: {JSON.stringify(navigation.getParam('newsId'))}</Text>
+        <Text>
+          标题：{JSON.stringify(navigation.getParam('newsTitle', 'Default'))}
+        </Text>
+        <Text>
+          名称：{JSON.stringify(navigation.getParam('newsName', 'Default'))}
+        </Text>
+        <Text>
+          等级：{JSON.stringify(navigation.getParam('newsTag', 'Default'))}
+        </Text>
       </View>
     );
   }
