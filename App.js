@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import {HomeScreen, AppContainer} from './navigator/base-nav';
+// import {HomeScreen, AppContainer} from './navigator/base-nav';
+import {AppContainer} from './navigator/bottomNav';
 
 const App: () => React$Node = () => {
   return <AppContainer />;

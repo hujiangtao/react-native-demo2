@@ -4,6 +4,23 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 class HomeScreen extends React.Component {
+  // 头部导航设置
+  static navigationOptions = {
+    title: '首页',
+    headerStyle: {
+      backgroundColor: 'rgb(100,149,237)',
+    },
+    headerTintColor: 'rgb(250,235,215)',
+    headerTitleStyle: {
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
+    headerLeft: () => <Button title="设置" onPress={() => alert('设置')} />,
+    headerRight: () => (
+      <Button title="扫一扫" onPress={() => alert('扫一扫')} />
+    ),
+  };
+
   render() {
     return (
       <View style={styles.homeStyle}>
@@ -62,13 +79,13 @@ const AppContainer = createAppContainer(rootStack);
 const styles = StyleSheet.create({
   homeStyle: {
     flex: 1,
-    backgroundColor: 'cyan',
+    backgroundColor: 'rgb(240,230,140)',
     justifyContent: 'center',
     alignItems: 'center',
   },
   detailStyle: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'rgb(245,245,220)',
     justifyContent: 'center',
     alignItems: 'center',
   },
