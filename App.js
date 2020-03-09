@@ -8,10 +8,11 @@
 
 import React from 'react';
 // import {HomeScreen, AppContainer} from './navigator/base-nav';
-import {AppContainer} from './navigator/bottomNav';
+// import {AppContainer} from './navigator/bottomNav';
+import {MainTabNavigator} from './navigator/mainTabNavigator';
 
 const App: () => React$Node = () => {
-  return <AppContainer />;
+  return <MainTabNavigator />;
 };
 
 export default App;
